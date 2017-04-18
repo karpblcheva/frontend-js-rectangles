@@ -20,8 +20,9 @@ function bottom (rectangle) {
 }
 
 function areIntersected( r1, r2 ) {
-	if ( bottom(r1) <= r2.top || right(r1) <= r2.left || bottom(r2) <= r1.top || right(r2) <= r1.left )
+	if ( bottom(r1) <= r2.top || right(r1) <= r2.left || bottom(r2) <= r1.top || right(r2) <= r1.left ) {
     return false;
+	}
 	else return true;
 }
 
@@ -62,8 +63,9 @@ var array = [ r3, r4, r5, r6 ];
 function filterVisible(r, array) {
 	return array.filter(function(elem) {
 		if ( bottom(r) <= elem.top || right(r) <= elem.left || bottom(elem) <= r.top || right(elem) <= r.left 
-			|| elem.width == 0 || elem.height == 0)
+			|| elem.width == 0 || elem.height == 0) {
 		return false;
+		}
 		else return true;
 	});
 }
