@@ -62,14 +62,11 @@ var array = [ r3, r4, r5, r6 ];
 
 function filterVisible(r, array) {
 	return array.filter(function(elem) {
-		if ( bottom(r) <= elem.top || right(r) <= elem.left || bottom(elem) <= r.top || right(elem) <= r.left 
-			|| elem.width == 0 || elem.height == 0) {
-		return false;
+		if ( areIntersected(r, elem) && elem.width !== 0 && elem.height !== 0 ) {
+		return true;
 		}
-		else return true;
+		else return false;
 	});
 }
 
 console.log(filterVisible(r, array))
- 
-  
