@@ -6,9 +6,9 @@
  };
 
  var r2 = {
-	 left: 30,
+	 left: 20,
 	 top: 10,
-	 width: 30,
+	 width: 0,
 	 height: 10
  };
 
@@ -19,13 +19,8 @@ function bottom (rectangle) {
 	return rectangle.top + rectangle.height;
 }
 
-r1.right = right(r1);
-r1.bottom = bottom(r1);
-r2.right = right(r2);
-r2.bottom = bottom(r2);
-
 function areIntersected( r1, r2 ) {
-	if ( r1.bottom <= r2.top || r1.right <= r2.left || r2.bottom <= r1.top || r2.right <= r1.left )
+	if ( bottom(r1) <= r2.top || right(r1) <= r2.left || bottom(r2) <= r1.top || right(r2) <= r1.left )
     return false;
 	else return true;
 }
