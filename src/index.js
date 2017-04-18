@@ -64,7 +64,7 @@ var array = [ r3, r4, r5, r6 ];
 
 function filterVisible(rectangle, array) {
 	return array.filter(function(elem) {
-		if ( areIntersected(r, elem) && elem.width !== 0 && elem.height !== 0 ) {
+		if ( areIntersected(rectangle, elem) && elem.width !== 0 && elem.height !== 0 ) {
 			return true;
 		}
 		else {
