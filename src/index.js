@@ -25,6 +25,49 @@ function areIntersected( r1, r2 ) {
 	else return true;
 }
 
-console.log(areIntersected( r1, r2 ))
+console.log(areIntersected( r1, r2 ));
+
+var r = {
+	left: 0, 
+	top: 0,
+	width: 20, 
+	height: 20
+ };
+var r3 = {
+     left: 10, 
+	 top: 10,
+     width: 25,  
+	 height: 25
+   };
+var r4 = {
+     left: 15, 
+	 top: 10,
+     width: 20,  
+	 height: 20
+   };
+var r5 = {
+     left: 10, 
+	 top: 10,
+     width: 0,  
+	 height: 25
+   };
+var r6 = {
+     left: 100, 
+	 top: 10,
+     width: 5,  
+	 height: 5
+   };
+var array = [ r3, r4, r5, r6 ];
+
+function filterVisible(r, array) {
+	return array.filter(function(elem) {
+		if ( bottom(r) <= elem.top || right(r) <= elem.left || bottom(elem) <= r.top || right(elem) <= r.left 
+			|| elem.width == 0 || elem.height == 0)
+		return false;
+		else return true;
+	});
+}
+
+console.log(filterVisible(r, array))
  
   
