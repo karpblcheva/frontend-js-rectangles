@@ -21,9 +21,11 @@ function bottom (rectangle) {
 
 function areIntersected( r1, r2 ) {
 	if ( bottom(r1) <= r2.top || right(r1) <= r2.left || bottom(r2) <= r1.top || right(r2) <= r1.left ) {
-    return false;
+		return false;
 	}
-	else return true;
+	else {
+		return true;
+	}
 }
 
 console.log(areIntersected( r1, r2 ));
@@ -60,12 +62,14 @@ var r6 = {
    };
 var array = [ r3, r4, r5, r6 ];
 
-function filterVisible(r, array) {
+function filterVisible(rectangle, array) {
 	return array.filter(function(elem) {
 		if ( areIntersected(r, elem) && elem.width !== 0 && elem.height !== 0 ) {
-		return true;
+			return true;
 		}
-		else return false;
+		else {
+			return false;
+		}
 	});
 }
 
